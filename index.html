@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        footer {
+            color: white;
+            background-color: black;
+            text-align: end;
+            padding: 10px;
+        }
+
+        .contact-section {
+            background-color: rgb(64, 0, 109);
+            padding: 40px 20px;
+        }
+
+        form {
+            color: white; 
+            background-color: rgb(64, 0, 109);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        form label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        form input, 
+        form textarea {
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        th, td {
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .profile {
+            background-color: aqua;
+            padding: 40px;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            justify-content: center;
+            max-width: 1000px; 
+            margin: 50px auto;  
+            padding: 0 20px;
+        }
+
+        .profile-imm {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .profile-text p {
+            margin-bottom: 12px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+
+        .profile-text {
+            max-width: 450px;
+        }
+
+        .objective {
+            font-size: 30px;
+            margin: 10px; 
+            padding: 20px; 
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(24, 24, 46, 0.85), rgba(24, 24, 46, 0.85)), url(imm/skyline.jpg);
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            color: white;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 50vh;
+        }
+
+        .hero-center {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .hero-footer {
+            text-align: left;
+            margin-top: auto;
+        }
+
+        .social {
+            text-align: right;
+        }
+
+        .hero-footer p,
+        .social p {
+            margin: 2px 0;
+        }
+
+        .size {
+            width: 50px;
+            vertical-align: middle;
+        }
+
+        .point {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        nav {
+            background-color: #18182e;
+            color: #ffffff;
+            padding: 50px 0px;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .skills-section {
+            background-color: #1f1f3a;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+        }
+
+        .skill-card {
+            background-color: #2e2e54;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            border: 1px solid #40006d;
+        }
+
+        .projects-section {
+            background-color: #f4f4f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .projects-section h2 {
+            color: #18182e;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+            }
+            
+            .profile-imm {
+                width: 100%;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="point">
+                <li><a href="#about">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#projects">WORK</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-center">
+                <h1>Sahil Banger</h1>
+                <h2>WEB DEVELOPER</h2>
+            </div>
+            <div class="hero-footer">
+                <p>Fiorenzula D'Arda, Italy</p>
+            </div>
+            <div class="social">
+                <p>Find me online 
+                    <a href="#"><img src="imm/insta.avif" alt="instagram" class="size"></a>
+                    <a href="#"><img src="imm/github.png" alt="github" class="size"></a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="profile">
+            <div class="objective">
+                <h2>On the path to becoming a developer. I dedicate my time to studying, experimenting with code, and building my first web projects. Focused on consistency, attention to detail, and a strong drive to turn this passion into a professional career.</h2>
+            </div>
+            <div class="profile-container">
+                <img src="imm/fotop.png" alt="Photo of myself" class="profile-imm">
+                <div class="profile-text">
+                    <p>I was born in Italy and am now 26 years old. I started my journey into programming with HTML, CSS, and JavaScript. Every day, I progress along a well-defined roadmap to turn this learning into a profession.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">HTML5</div>
+                <div class="skill-card">CSS3 (Flexbox & Grid)</div>
+                <div class="skill-card">JavaScript (Basic)</div>
+                <div class="skill-card">Git & GitHub</div>
+                <div class="skill-card">VS Code</div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project 1 - Personal Portfolio</h3>
+                    <p>A responsive personal website built with HTML5, CSS Flexbox, and Grid layout.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2 - Coming Soon</h3>
+                    <p>JavaScript interactive web application currently under development.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3 - Coming Soon</h3>
+                    <p>A web page showcasing frontend techniques and responsive design principles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <form>
+                <p class="full-width">Want to Work Together?</p>
+                <span class="full-width">I'd love to hear from you</span>
+                <h1 class="full-width">Contact Me</h1>
+
+                <div class="form-group">
+                    <label for="name-field">Name</label>
+                    <input type="text" id="name-field">
+                </div>
+
+                <div class="form-group">
+                    <label for="email-field">Email</label>
+                    <input type="email" id="email-field"> 
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="message-field">Message</label>
+                    <textarea id="message-field" placeholder="Message..."></textarea>
+                </div>
+
+                <button type="submit" class="full-width">Submit</button>
+            </form>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Email</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sahil Banger</td>
+                            <td>banjohil45@gmail.com</td>
+                            <td>26</td>
+                        </tr>
+                    </tbody>        
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Portfolio</p>
+    </footer>
+
+</body>
+</html>
