@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multi-Section Feedback Form</title>
+</head>
+<body>
+<h1>The Form</h1>
+<form>
+<div>
+<h2>Profile Selection</h2>
+<input type="text" placeholder="Email" required>
+<input type="text" placeholder="URL" required>
+</div>
+<div>
+<h2>Evaluation Section</h2>
+<p>How would you rate it?</p>
+<label>
+<input type="radio" name="exp" value="excellent">Excellent
+</label>  
+<label>
+<input type="radio" name="exp" value="satisfactory">Satisfactory    
+</label>
+<label>
+<input type="radio" name="exp" value="poor">Poor    
+</label>
+<p>Which learning tools did you find most helful?</p>
+<label>
+    <input type="checkbox" name="tools" value="dark mode interface">Dark Mode Interface
+</label>
+<label>
+    <input type="checkbox" name="tools" value="offline access">Offline Access
+</label>
+<label>
+    <input type="checkbox" name="tools" value="automatic cloud sync">Automatic Cloud Sync
+</label>
+</div>
+<button type="submit">Submit Feedback</button>
+</form>
+</body>
+</html>

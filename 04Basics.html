@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 Exercise</title>
+    <style>
+        body {
+                color: blue;
+                font-family: 'Times New Roman', Times, serif;
+                background-color: brown;
+            }
+        h1, h2, h3 {
+            color: green;
+        }
+        nav, main{
+            background-color: black;
+            color: white;
+            margin: 20px 0px 20px 0px;
+            padding: 40px 0px 40px 0px;
+            border-radius: 15px;
+        }  
+        form {
+            background-color: black;
+            color: white; 
+            margin: 30px 250px;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        table {
+            border-radius: 15px;
+            background-color: black;
+            color: white; 
+            margin: 30px; 
+        }
+
+        th, td {
+            padding: 15px 20px; 
+            font-family: Arial, sans-serif;
+            color: white; 
+        }
+
+        th {
+            color: green; 
+        } 
+        a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imm/bird.png" alt="bird" width="200">
+    </header>
+    <nav>
+    <h1>Profile</h1>
+    <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+    </ul>
+    </nav>
+    <main>
+        <h2>Second Profile</h2>
+        <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum non ipsum minus, animi et odio perferendis id nemo eaque quos aut est molestiae ex qui quasi sit. Placeat, cum facilis?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam quis nesciunt repellat similique veritatis quia expedita ducimus? Dolorem nam voluptates deleniti consequatur fuga sit enim error similique dolores. Voluptates.
+        </p>
+    </main>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                <th>Name</th> 
+                <th>Email</th>
+                <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John D.</td>
+                    <td>-.-..-.@gmail.com</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Sara M.</td>
+                    <td>-----@gmail.com</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>Jack G.</td>
+                    <td>--.--.--.@gmail.com</td>
+                    <td>35</td>
+                </tr>
+            </tbody>        
+        </table>
+    </div>
+    <form>
+        <p>Three Profile</p>
+            <label for="name-field">Name</label>
+                <input type="text" id="name-field">
+            <br>
+            <br>
+            <label for="email-field">Email</label>
+                <input type="text" id="email-field">  
+            <br>
+            <p><strong>Favorite Pet:</strong></p>
+            <label>
+                <input type="checkbox" name="dog" value="dog">Dog
+            </label>
+            <label>
+                <input type="checkbox" name="cat" value="cat">Cat
+            </label>
+            <br>
+            <br>
+            <label>
+                <textarea placeholder="Message..."></textarea>
+            </label>
+            <br>
+        <button type="submit">Submit</button>
+    </form>
+
+
+</body>
+</html>
